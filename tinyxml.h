@@ -38,6 +38,8 @@ distribution.
 #include <string.h>
 #include <assert.h>
 
+#include <string>
+
 // Help out windows:
 #if defined( _DEBUG ) && !defined( DEBUG )
 #define DEBUG
@@ -1407,6 +1409,9 @@ public:
 	bool LoadFile( TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
 	/// Save a file using the current document value. Returns true if successful.
 	bool SaveFile() const;
+
+	bool LoadData(std::string_view s);
+
 	/// Load a file using the given filename. Returns true if successful.
 	bool LoadFile( const char * filename, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
 	/// Save a file using the given filename. Returns true if successful.
